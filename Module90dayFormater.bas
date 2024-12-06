@@ -1,3 +1,4 @@
+Attribute VB_Name = "Module2"
 'Globals
 Global newWsName As String, totalPages As Integer, globalLog As String, cp As Integer, dict As Object, aSheet As String
 
@@ -181,7 +182,7 @@ Sub GetInvoiceData(cp As Integer)
     
     'finds the last column
     
-    lastCol = activeSheet.UsedRange.Columns.Count
+    lastCol = ActiveSheet.UsedRange.Columns.Count
     
     DebugMsg ("Invoice page: " & cp & " Last Column: " & lastCol)
     
@@ -189,7 +190,7 @@ Sub GetInvoiceData(cp As Integer)
     
     'finds the last row
 
-    lastRow = activeSheet.UsedRange.Rows.Count
+    lastRow = ActiveSheet.UsedRange.Rows.Count
     
     DebugMsg ("Invoice page: " & cp & " Last Row: " & lastRow)
     
@@ -217,7 +218,7 @@ Sub DeleteEmptyRowsForTable(aSheet)
     Sheets(aSheet).Activate
     
     'finds the last row
-    lRow = activeSheet.UsedRange.Rows.Count
+    lRow = ActiveSheet.UsedRange.Rows.Count
     
     
     If Range("A1:" & lRow & "1").SpecialCells(xlCellTypeBlanks).EntireRow.Count > 0 Then
@@ -244,7 +245,7 @@ Sub DeleteEmptyColumnsForTable(aSheet)
     'Sheets(activeSheet).Activate
     
     'finds the last row
-    lCol = activeSheet.UsedRange.Columns.Count
+    lCol = ActiveSheet.UsedRange.Columns.Count
     
 
 
@@ -343,3 +344,4 @@ Sub OutputLogFile()
         Shell "notepad.exe " & path, vbNormalFocus
 
 End Sub
+
